@@ -1,4 +1,4 @@
-package stacks
+package stacks_1
 
 import (
 	"bufio"

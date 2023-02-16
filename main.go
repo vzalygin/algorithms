@@ -6,10 +6,10 @@ import (
 
 type Stack struct {
 	size  int
-	value []int
+	value []int32
 }
 
-func (s *Stack) pop() (int, error) {
+func (s *Stack) pop() (int32, error) {
 	if s.size > 0 {
 		s.size -= 1
 		e := s.value[s.size]
@@ -20,16 +20,8 @@ func (s *Stack) pop() (int, error) {
 	}
 }
 
-func (s *Stack) peek() (int, error) {
-	if s.size > 0 {
-		return s.value[s.size-1], nil
-	} else {
-		return 0, errors.New("peek empty stack")
-	}
-}
-
-func (s *Stack) push(num int) {
-	s.value = append(s.value, num)
+func (s *Stack) push(new int32) {
+	s.value = append(s.value, new)
 	s.size += 1
 }
 
